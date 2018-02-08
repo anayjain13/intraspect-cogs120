@@ -1,3 +1,4 @@
-# intraspect-cogs120
+repo
+====
 
-An emotion tracking webapp. A class project for COGS 120.
+Project Description
