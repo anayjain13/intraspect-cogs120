@@ -1,22 +1,35 @@
 <html>
 <head>
 	<title>Intraspect</title>
+	<link href="/css/main.css" rel="stylesheet">
 </head>
 	<body>
-		<p>Hello, {{username}}</p>
-		<div class="">Slider here</div>
-		<hr>
+		<div class="nav">
+			<a href="/">Home</a>
+			<a href="/history">History</a>
+			<a href="/profile">Profile</a>
+			<a href="/analytics">Analytics</a>
+			<a href="/settings">Settings</a>
+		</div>
 		<form id="mainform">
+			
+				<h3 class="happy">How happy do you feel?</h3><br>
+				<input type="range" min="0" max="100">
+			
+			<!-- <hr> -->
 			<textarea name="reason">Why do you feel this way?</textarea>
 			<br>
+			
+			<ul>
+
+				<h4>Add Tags:</h4>
+				<li><input type="checkbox"> Elated</li>
+				<li><input type="checkbox"> Playful</li>
+				<li><input type="checkbox"> Excited</li>
+				<li><a href="#">+ Create New Tag</a></li>
+			</ul>
+
 			<button>Submit</button>
 		</form>
-		<div class="nav">
-			<div>Profile</div>
-			<div><a href="/history">History</a></div>
-			<div>Home</div>
-			<div>Analytics</div>
-			<div>Settings</div>
-		</div>
 	</body>
 </html>
