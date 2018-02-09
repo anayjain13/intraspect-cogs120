@@ -7,7 +7,7 @@ body {
 }
 
 .module img {
-	max-width: 100px;
+	max-width: 60px;
 	display: inline;
 }
 
@@ -49,4 +49,16 @@ button {
 	font-size: 20px;
 	margin-top: 1.25rem;
 
+}
+
+.module {
+	background: #ccc;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.module span {
+	font-weight: bold;
+	font-size: 2rem;
 }
