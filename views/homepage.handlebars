@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Intraspect</title>
+	<link href="/css/main.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+	<body>
+
+		<nav>
+   <div class="nav-wrapper">
+	 <a href="#!" class="brand-logo">Logo</a>
+	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	 <ul class="right hide-on-med-and-down">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+	 <ul class="side-nav" id="mobile-demo">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+   </div>
+ </nav>
+
+ <div class="container">
+
+		<form id="mainform">
+			<!-- <h6>Select Activity</h6> -->
+			<p class="input-field">
+				<select>
+			      <option value="1">School</option>
+			      <option value="2">Work</option>
+			      <option value="3">Football</option>
+			      <option value="4" selected>Yoga</option>
+			      <option value="5">Meditation</option>
+				  <option value="" disabled>+ Add Activity</option>
+			    </select>
+			    <label>Select Activity</label>
+			</p>
+
+
+			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
+				<p class="range-field">
+		      	<input type="range" id="test5" min="0" max="10" />
+				<label for="">How did this activity make you feel?</label>
+		    </p>
+
+			<!-- <hr> -->
+			<textarea name="reason" class="materialize-textarea" placeholder="Why do you feel this way?"></textarea>
+			<br>
+
+			<!-- <ul>
+
+				<h4>Add Tags:</h4>
+				<li><input type="checkbox"> Elated</li>
+				<li><input type="checkbox"> Playful</li>
+				<li><input type="checkbox"> Excited</li>
+				<li><a href="#">+ Create New Tag</a></li>
+			</ul> -->
+
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Relaxed</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box2" />
+		        <label class="check-label" for="filled-in-box2">Playful</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box3" />
+		        <label class="check-label" for="filled-in-box3">Enthusiastic</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box4" />
+		        <label class="check-label" for="filled-in-box4">Sad</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box5" />
+		        <label class="check-label" for="filled-in-box5">Morose</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box6" />
+		        <label class="check-label" for="filled-in-box6">Energetic</label>
+
+
+
+			<br>
+			<br>
+			<br>
+
+			<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check</i></a>
+		</form>
+	</div>
+
+
+		<script type="text/javascript">
+			$( document ).ready(function(){
+				$('select').material_select();
+
+				$(".button-collapse").sideNav();
+			});
+
+
+		</script>
+
+	</body>
+</html>
