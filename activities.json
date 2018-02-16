@@ -1,0 +1,17 @@
+{
+	"activities": [
+					{
+						"act_name":"Yoga",
+						"dates":[
+							{
+								"datetime":"2018-01-23T18:31:43.511Z",
+								"value": "0"
+							},
+							{
+								"datetime":"2018-01-24T18:30:13.425Z",
+								"value": "1"
+							}
+						]
+					}
+			]
+}
