@@ -12,6 +12,18 @@
 								"value": "1"
 							}
 						]
+					},
+					{
+						"act_name":"School"
+					},
+					{
+						"act_name":"Work"
+					},
+					{
+						"act_name":"Football"
+					},
+					{
+						"act_name":"Meditation"
 					}
 			]
 }
