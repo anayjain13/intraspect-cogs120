@@ -3,17 +3,31 @@
 	<title>Intraspect</title>
 	<link href="/css/main.css" rel="stylesheet">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 	<body>
-		<div class="nav">
-			<a href="/">Home</a>
-			<a href="/history">History</a>
-			<a href="/profile">Profile</a>
-			<a href="/analytics">Analytics</a>
-			<a href="/settings">Settings</a>
-		</div>
+		<nav>
+   <div class="nav-wrapper">
+	 <a href="#!" class="brand-logo">Logo</a>
+	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	 <ul class="right hide-on-med-and-down">
+	   <li><a href="sass.html">Home</a></li>
+	   <li><a href="badges.html">History</a></li>
+	   <li><a href="collapsible.html">Analytics</a></li>
+	   <li><a href="mobile.html">Settings</a></li>
+	 </ul>
+	 <ul class="side-nav" id="mobile-demo">
+	   <li><a href="sass.html">Sass</a></li>
+	   <li><a href="badges.html">Components</a></li>
+	   <li><a href="collapsible.html">Javascript</a></li>
+	   <li><a href="mobile.html">Mobile</a></li>
+	 </ul>
+   </div>
+ </nav>
+
+
 		<form id="mainform">
 
 				<h3 class="happy">How happy do you feel?</h3><br>
@@ -34,5 +48,12 @@
 
 			<button>Submit</button>
 		</form>
+
+		<script type="text/javascript">
+			$( document ).ready(function(){
+
+				$(".button-collapse").sideNav();
+			});
+		</script>
 	</body>
 </html>
