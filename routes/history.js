@@ -1,3 +1,5 @@
+var data = require('../activities.json');
+
 exports.view = function(req, res){
-  res.render('history');
+  res.render('history',data);
 };

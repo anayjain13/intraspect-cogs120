@@ -32,18 +32,16 @@
 
 		<form id="mainform">
 			<!-- <h6>Select Activity</h6> -->
+			
 			<p class="input-field">
 				<select>
-			      <option value="1">School</option>
-			      <option value="2">Work</option>
-			      <option value="3">Football</option>
-			      <option value="4" selected>Yoga</option>
-			      <option value="5">Meditation</option>
+			      {{# each activities}}
+			      <option value="{{@index}}">{{act_name}}</option>
+			      {{/each}}
 				  <option value="" disabled>+ Add Activity</option>
 			    </select>
 			    <label>Select Activity</label>
 			</p>
-
 
 			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
 				<p class="range-field">
