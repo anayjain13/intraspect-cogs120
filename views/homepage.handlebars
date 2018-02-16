@@ -14,16 +14,16 @@
 	 <a href="#!" class="brand-logo">Logo</a>
 	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	 <ul class="right hide-on-med-and-down">
-	   <li><a href="sass.html">Home</a></li>
-	   <li><a href="badges.html">History</a></li>
-	   <li><a href="collapsible.html">Analytics</a></li>
-	   <li><a href="mobile.html">Settings</a></li>
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
 	 </ul>
 	 <ul class="side-nav" id="mobile-demo">
-	   <li><a href="sass.html">Sass</a></li>
-	   <li><a href="badges.html">Components</a></li>
-	   <li><a href="collapsible.html">Javascript</a></li>
-	   <li><a href="mobile.html">Mobile</a></li>
+	   <li><a href="/home">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
 	 </ul>
    </div>
  </nav>
@@ -31,33 +31,77 @@
  <div class="container">
 
 		<form id="mainform">
+			<!-- <h6>Select Activity</h6> -->
+			<p class="input-field">
+				<select>
+			      <option value="1">School</option>
+			      <option value="2">Work</option>
+			      <option value="3">Football</option>
+			      <option value="4" selected>Yoga</option>
+			      <option value="5">Meditation</option>
+				  <option value="" disabled>+ Add Activity</option>
+			    </select>
+			    <label>Select Activity</label>
+			</p>
 
-				<h3 class="happy">How happy do you feel?</h3><br>
-				<input type="range" min="0" max="100">
+
+			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
+				<p class="range-field">
+		      	<input type="range" id="test5" min="0" max="10" />
+				<label for="">How did this activity make you feel?</label>
+		    </p>
 
 			<!-- <hr> -->
-			<textarea name="reason">Why do you feel this way?</textarea>
+			<textarea name="reason" class="materialize-textarea" placeholder="Why do you feel this way?"></textarea>
 			<br>
 
-			<ul>
+			<!-- <ul>
 
 				<h4>Add Tags:</h4>
 				<li><input type="checkbox"> Elated</li>
 				<li><input type="checkbox"> Playful</li>
 				<li><input type="checkbox"> Excited</li>
 				<li><a href="#">+ Create New Tag</a></li>
-			</ul>
+			</ul> -->
 
-			<button>Submit</button>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Relaxed</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Playful</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Enthusiastic</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Sad</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Morose</label>
+
+				<input type="checkbox" class="filled-in" id="filled-in-box" />
+		        <label class="check-label" for="filled-in-box">Energetic</label>
+
+
+
+			<br>
+			<br>
+			<br>
+
+			<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">check</i></a>
 		</form>
 	</div>
 
 
 		<script type="text/javascript">
 			$( document ).ready(function(){
+				$('select').material_select();
 
 				$(".button-collapse").sideNav();
 			});
+
+
 		</script>
 
 	</body>

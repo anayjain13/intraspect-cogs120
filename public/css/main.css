@@ -1,5 +1,5 @@
 body {
-	font-family: sans-serif;
+	/* font-family: sans-serif; */
 	/* color: #333; */
 	font-size: 100%;
 	/* padding: 5% 15%; */
@@ -9,6 +9,11 @@ body {
 .module img {
 	max-width: 60px;
 	display: inline;
+}
+
+nav {
+	margin-bottom: 2.5rem;
+
 }
 
 .nav {
@@ -30,6 +35,9 @@ body {
 	/*text-align: center;*/
 }
 
+.check-label {
+	margin-right: 1rem;
+}
 
 input[type="range"] {
 	width: 450px;
