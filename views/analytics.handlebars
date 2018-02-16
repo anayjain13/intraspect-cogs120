@@ -1,20 +1,76 @@
 <html>
-	<head>
-		<title>History - Intraspect</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	</head>
+<head>
+	<title>Analytics - Intraspect</title>
+	<link href="/css/main.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
 	<body>
-		<div class="nav">
-			<div>Profile</div>
-			<div>History</div>
-			<div><a href="/">Home</a></div>
-			<div>Analytics</div>
-			<div>Settings</div>
-		</div>
+		<nav>
+   <div class="nav-wrapper">
+	 <a href="#" class="brand-logo">Logo</a>
+	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	 <ul class="right hide-on-med-and-down">
+		 <li><a href="/homepage">Home</a></li>
+	     <li><a href="/history">History</a></li>
+	     <li><a href="/analytics">Analytics</a></li>
+	     <li><a href="/settings">Settings</a></li>
+	   </ul>
+	   <ul class="side-nav" id="mobile-demo">
+	     <li><a href="/homepage">Home</a></li>
+	     <li><a href="/history">History</a></li>
+	     <li><a href="/analytics">Analytics</a></li>
+	     <li><a href="/settings">Settings</a></li>
+	 </ul>
+   </div>
+ </nav>
 
-		<p>History</p>
+	<div class="container">
+		<form>
+			<p class="input-field">
+				<select>
+				  <option value="1">School</option>
+				  <option value="2">Work</option>
+				  <option value="3">Football</option>
+				  <option value="4" selected>Yoga</option>
+				  <option value="5">Meditation</option>
+				  <option value="" disabled>+ Add Activity</option>
+				</select>
+				<label>Select Activity</label>
+			</p>
+		</form>
+
+
+		<div class="card">
+    <div class="card-content">
+      <p class="flow-text">Looks like Yoga has been doing you good, lately!</p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test4">Overview</a></li>
+        <li class="tab"><a class="active" href="#test5">Time Analysis</a></li>
+        <li class="tab"><a href="#test6">Recommendations</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div id="test4">
+		  <img src="http://via.placeholder.com/350x150">
+	  </div>
+      <div id="test5">School</div>
+      <div id="test6">Test 3</div>
+    </div>
+  </div>
+
+</div>
+
+		<script type="text/javascript">
+			$( document ).ready(function(){
+				$('select').material_select();
+
+				$(".button-collapse").sideNav();
+			});
+		</script>
 	</body>
 </html>
