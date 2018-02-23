@@ -19,7 +19,7 @@ var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect('mongodb://localhost/users_test');
+mongoose.connect('mongodb://localhost/users');
 
 
 require('./config/passport')(passport);
@@ -98,6 +98,18 @@ app.post('/login', passport.authenticate('local-login', {
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
+
+// route for facebook authentication and login
+    app.get('/auth/facebook', passport.authenticate('facebook', { 
+      scope : ['public_profile', 'email']
+    }));
+
+    // handle the callback after facebook has authenticated the user
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        }));
 
 //Running the server
 http.createServer(app).listen(app.get('port'), function(){
