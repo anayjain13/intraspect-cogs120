@@ -70,3 +70,46 @@ button {
 	font-weight: bold;
 	font-size: 2rem;
 }
+
+.activity-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.input-field {
+	flex-grow: 2;
+}
+
+.card-action--dual {
+	display: flex;
+	justify-content: stretch;
+}
+
+.card-action--dual .material-icons {
+	position: relative;
+	display: block;
+}
+
+.card-action--dual span {
+	display: block;
+	text-align: center;
+}
+
+.card-action--mono {
+	display:flex;
+	justify-content: center;
+}
+
+.img-container {
+	display: flex;
+	justify-content: center;
+}
+
+.user__img {
+	display: block;
+}
+
+.user__name {
+	margin-bottom: 0.1rem;
+}
+

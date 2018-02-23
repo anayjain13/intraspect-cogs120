@@ -1,32 +1,97 @@
 <html>
-	<head>
-		<title>History - Intraspect</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	</head>
+<head>
+	<title>Profile&mdash;Intraspect</title>
+	<link href="/css/main.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
 	<body>
-		<div class="nav">
-			<div>Profile</div>
-			<div>History</div>
-			<div><a href="/">Home</a></div>
-			<div>Analytics</div>
-			<div>Settings</div>
-		</div>
 
-		<div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+		<nav>
+   <div class="nav-wrapper">
+	 <a href="/homepage" class="brand-logo">Intraspect</a>
+	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	 <ul class="right hide-on-med-and-down">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+	 <ul class="side-nav" id="mobile-demo">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/analytics">Analytics</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+   </div>
+ </nav>
 
-                    <p>
+ <div class="container">
+ 	<div class="img-container">
+ 		<img class="user__img responsive-img circle z-depth-3" src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" alt="">
+ 	</div>
+ 		<h3 class="user__name center">Jane Doe</h1>
+ 		<p class="center flow-text user__username">@janedoe</p>
+ 	
+		<div class="card">
+		    <div class="card-content">
+		      <p class="flow-text">Hey Jane! Welcome back to Intraspect!</p>
+		    </div>
+		    <div class="card-tabs">
+		      <ul class="tabs tabs-fixed-width">
+		        <li class="tab"><a href="#test4">Average Score</a></li>
+		        <li class="tab"><a href="#test5">Analysis</a></li>
+		        
+		        <li class="tab"><a href="#test6">Recommendations</a></li>
+		      </ul>
+		    </div>
+		    <div class="card-content grey lighten-4">
+		      <div id="test4">
+				  <h1 class="center">7</h1>
+			  </div>
+			  <div id="test5">add graph here</div>
+		      <div id="test6">
+				  <p class="flow-text">Yoga has had a positive impact on your happiness on an average. Maybe you want to try to similar activites like Meditation or Running as well?</p>
+			  </div>
+		    </div>
+		  </div>
+		
+	</div>
+
+
+		<script type="text/javascript">
+			$( document ).ready(function(){
+				$('select').material_select();
+
+				$(".button-collapse").sideNav();
+
+				$("#new-tag").click(function(){
+					var newTag = prompt("Add a new tag:");
+					$('#newtags').append("<input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box6\" /><label class=\"check-label\" for=\"filled-in-box6\">" + newTag + "</label>");
+				});
+
+				$('#add-activity').click(function(){
+					var newActivity = prompt("Add new Activity:");
+				});
+
+			});
+
+
+		</script>
+
+	</body>
+</html>
+
+<!-- RIBHU'S CODE -->
+              <!--       <p>
                         <strong>id</strong>: {{user._id }}<br>
                         <strong>email</strong>: {{ user.local.email  }}<br>
                         <strong>password</strong>: {{ user.local.password  }}
                     </p>
 
             </div>
-        </div>
+        </div> -->
 
-		<p>History</p>
-	</body>
-</html>
