@@ -31,7 +31,11 @@
 
  <div class="container">
 
+<<<<<<< HEAD
 		<form id="mainform" action="/addact" method="post">
+=======
+		<form id="mainform" action="/submit" method="post">
+>>>>>>> 48ac45195a6f5d96b38674f19bfcd162e6e847ff
 			<!-- <h6>Select Activity</h6> -->
 			<div class="activity-container">
 				<p class="input-field">
@@ -54,7 +58,7 @@
 
 
 			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
-				<label for="">How did this activity make you feel?</label>
+				<label for="" name="comment">How did this activity make you feel?</label>
 				<p class="range-field">
 		      	<input type="range" id="test5" min="1" max="10" />
 
@@ -74,11 +78,11 @@
 			</ul> -->
 
 				<p class="flow-text">Add Tags:</p>
+				{{#each user.local.tags}}
+				<input type="checkbox" class="filled-in" id="filled-in-box{{@index}}" />
+		        <label class="check-label" for="filled-in-box{{@index}}">{{user.local.tags}}</label>
 
-				<input type="checkbox" class="filled-in" id="filled-in-box" />
-		        <label class="check-label" for="filled-in-box">Relaxed</label>
-
-				<input type="checkbox" class="filled-in" id="filled-in-box2" />
+<!-- 				<input type="checkbox" class="filled-in" id="filled-in-box2" />
 		        <label class="check-label" for="filled-in-box2">Playful</label>
 
 				<input type="checkbox" class="filled-in" id="filled-in-box3" />
@@ -91,7 +95,8 @@
 		        <label class="check-label" for="filled-in-box5">Morose</label>
 
 				<input type="checkbox" class="filled-in" id="filled-in-box6" />
-		        <label class="check-label" for="filled-in-box6">Energetic</label>
+		        <label class="check-label" for="filled-in-box6">Energetic</label> -->
+				{{/each}}
 
 				<span id="newtags">
 
