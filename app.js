@@ -9,13 +9,19 @@ var handlebars = require('express3-handlebars');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+var methodOverride = require('method-override')
 
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
-mongoose.connect(configDB.url);
+mongoose.Promise = global.Promise;
+
+
+mongoose.connect('mongodb://localhost/users_test');
+
+
 require('./config/passport')(passport);
 
 var index = require('./routes/index');
@@ -39,9 +45,10 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(methodOverride());
 app.use(express.cookieParser('IxD secret key'));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.session());
 app.use(flash());
 app.use(passport.initialize());
@@ -55,7 +62,11 @@ if ('development' == app.get('env')) {
 }
 
 // required for passport
-app.use(session({ secret: 'intraspectisprettyusefultbh' })); // session secret
+app.use(session({ 
+	secret: 'intraspectisprettyusefultbh' , // session secret
+	resave: true,
+    	saveUninitialized: true
+	})); 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -82,9 +93,9 @@ app.post('/signup', passport.authenticate('local-signup', {
         failureFlash : true // allow flash messages
     }));
 
-app.post('/', passport.authenticate('local-login', {
+app.post('/login', passport.authenticate('local-login', {
         successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/', // redirect back to the signup page if there is an error
+        failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 

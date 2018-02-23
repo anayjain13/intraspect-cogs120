@@ -15,12 +15,15 @@
 
    </div>
  </nav>
-
+	
+	{{#if message}}
+        		<div class="alert alert-danger">{{message}}</div>
+    	{{/if}}
 	<div class="container">
 
 
 		 <div class="row">
-		<form class="col s12">
+		<!-- <form class="col s12" action="/login" method="post">
 		<div class="row">
 		 <div class="input-field col s12">
 		   <i class="material-icons prefix">account_circle</i>
@@ -36,8 +39,20 @@
 		</div>
 		<center><button type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">send</i>Login</button></center>
 
-		</form>
+		</form> -->
 		 
+		 <form action="/login" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+    </form>
 		</div>
 
 </div>

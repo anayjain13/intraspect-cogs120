@@ -12,23 +12,24 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.15.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.4.3",
     "express": "3.x",
+    "express-session": "~1.14.1",
     "express3-handlebars": "*",
+    "method-override": "^2.3.10",
+    "mocha": "^5.0.1",
     "mongodb": "*",
     "mongoose": "*",
+    "morgan": "~1.7.0",
     "nodemon": "^1.15.1",
     "passport": "~0.3.2",
-    "passport-local": "~1.0.0",
     "passport-facebook": "~2.1.1",
-    "passport-twitter": "~1.0.4",
     "passport-google-oauth": "~1.0.0",
-    "connect-flash": "~0.1.1",
-    "bcrypt-nodejs": "latest",
-    "morgan": "~1.7.0",
-    "body-parser": "~1.15.2",
-    "cookie-parser": "~1.4.3",
-    "method-override": "~2.3.6",
-    "express-session": "~1.14.1"
+    "passport-local": "~1.0.0",
+    "passport-twitter": "~1.0.4"
   },
   "engines": {
     "node": "6.11.0"
