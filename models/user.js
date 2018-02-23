@@ -7,6 +7,7 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
+        tags : { type : [String], default : ['Relaxed','Playful','Sad']}
     },
     facebook         : {
         id           : String,

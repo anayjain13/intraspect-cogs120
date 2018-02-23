@@ -19,7 +19,7 @@ var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect('mongodb://localhost/users');
+mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect');
 
 
 require('./config/passport')(passport);
