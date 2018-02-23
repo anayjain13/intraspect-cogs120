@@ -34,11 +34,11 @@
  		<img class="user__img responsive-img circle z-depth-3" src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" alt="">
  	</div>
  		<h3 class="user__name center">Jane Doe</h1>
- 		<p class="center flow-text user__username">@janedoe</p>
+ 		<p class="center flow-text user__username">@{{ user.local.email  }}</p>
  	
 		<div class="card">
 		    <div class="card-content">
-		      <p class="flow-text">Hey Jane! Welcome back to Intraspect!</p>
+		      <p class="flow-text">Hey {{ user.local.email  }}! Welcome back to Intraspect!</p>
 		    </div>
 		    <div class="card-tabs">
 		      <ul class="tabs tabs-fixed-width">
