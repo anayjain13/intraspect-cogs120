@@ -1,20 +1,143 @@
 <html>
-	<head>
-		<title>History - Intraspect</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	</head>
+<head>
+	<title>Settings&mdash;Intraspect</title>
+	<link href="/css/main.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
 	<body>
-		<div class="nav">
-			<div>Profile</div>
-			<div>History</div>
-			<div><a href="/">Home</a></div>
-			<div>Analytics</div>
-			<div>Settings</div>
-		</div>
 
-		<p>History</p>
+		<nav>
+   <div class="nav-wrapper">
+	 <a href="/homepage" class="brand-logo">Intraspect</a>
+	 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	 <ul class="right hide-on-med-and-down">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/profile">Profile</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+	 <ul class="side-nav" id="mobile-demo">
+	   <li><a href="/homepage">Home</a></li>
+	   <li><a href="/history">History</a></li>
+	   <li><a href="/profile">Profile</a></li>
+	   <li><a href="/settings">Settings</a></li>
+	 </ul>
+   </div>
+ </nav>
+
+<div class="container">
+
+	<h5>Manage Activities:</h5>
+
+	<br>
+
+	<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Yoga</div>
+      <div class="collapsible-body"><span>
+		  	<form class="">
+					<div class="input-field">
+						<i class="material-icons prefix">access_time</i>
+						<input type="text" id="time" class="timepicker" placeholder="Pick Time">
+					</div>
+
+					<p class="flow-text">Select Days of the Week:</p>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box" />
+			        <label class="check-label" for="filled-in-box">Monday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box2" />
+			        <label class="check-label" for="filled-in-box2">Tuesday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box3" />
+			        <label class="check-label" for="filled-in-box3">Wednesday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box4" />
+			        <label class="check-label" for="filled-in-box4">Thursday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box5" />
+			        <label class="check-label" for="filled-in-box5">Friday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box6" />
+			        <label class="check-label" for="filled-in-box6">Saturday</label>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box7" />
+			        <label class="check-label" for="filled-in-box7">Sunday</label>
+
+					<br><br>
+					<!-- Switch -->
+					 <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
+					   <label>
+						 Off
+						 <input type="checkbox">
+						 <span class="lever"></span>
+						 On
+					   </label>
+					 </div>
+		  	</form>
+
+
+
+	  </span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Meditation</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>School</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+
+</div>
+
+
+		<script type="text/javascript">
+			$( document ).ready(function(){
+				$('select').material_select();
+
+				$(".button-collapse").sideNav();
+
+				$("#new-tag").click(function(){
+					var newTag = prompt("Add a new tag:");
+					$('#newtags').append("<input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box6\" /><label class=\"check-label\" for=\"filled-in-box6\">" + newTag + "</label>");
+				});
+
+				$('#add-activity').click(function(){
+					var newActivity = prompt("Add new Activity:");
+				});
+
+				$('.timepicker').pickatime({
+				    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+				    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+				    twelvehour: true, // Use AM/PM or 24-hour format
+				    donetext: 'OK', // text for done-button
+				    cleartext: 'Clear', // text for clear-button
+				    canceltext: 'Cancel', // Text for cancel-button
+				    autoclose: false, // automatic close timepicker
+				    ampmclickable: true, // make AM PM clickable
+				    aftershow: function(){} //Function for after opening timepicker
+				  });
+
+			});
+
+
+		</script>
+
 	</body>
 </html>
+
+<!-- RIBHU'S CODE -->
+              <!--       <p>
+                        <strong>id</strong>: {{user._id }}<br>
+                        <strong>email</strong>: {{ user.local.email  }}<br>
+                        <strong>password</strong>: {{ user.local.password  }}
+                    </p>
+
+            </div>
+        </div> -->
