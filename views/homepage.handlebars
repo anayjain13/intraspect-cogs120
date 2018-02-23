@@ -31,7 +31,7 @@
 
  <div class="container">
 
-		<form id="mainform">
+		<form id="mainform" action="/addact" method="post">
 			<!-- <h6>Select Activity</h6> -->
 			<div class="activity-container">
 				<p class="input-field">
@@ -124,6 +124,7 @@
 
 				$('#add-activity').click(function(){
 					var newActivity = prompt("Add new Activity:");
+					$('.dropdown-content').append("<li><span>" + newActivity + "</span></li>");
 				});
 
 			});
