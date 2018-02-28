@@ -32,6 +32,8 @@ var profile = require('./routes/profile');
 var settings = require('./routes/settings');
 var homepage = require('./routes/homepage');
 var signup = require('./routes/signup');
+var privacy = require('./routes/privacypolicy');
+var terms = require('./routes/termsofservice');
 
 
 var app = express();
@@ -78,6 +80,8 @@ app.get('/analytics',analytics.view);
 app.get('/profile',profile.view);
 app.get('/settings',settings.view);
 app.get('/homepage',homepage.view);
+app.get('/privacypolicy',privacy.view);
+app.get('/termsofservice',terms.view);
 app.get('/signup', function(req, res) {
         res.render('signup', { message: req.flash('signupMessage') });
     });
