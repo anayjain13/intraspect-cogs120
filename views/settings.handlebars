@@ -37,7 +37,7 @@
 
 	<ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Yoga</div>
+      <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Yoga</div>
       <div class="collapsible-body"><span>
 		  	<form class="">
 					<div class="input-field">
@@ -85,12 +85,99 @@
 	  </span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Meditation</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Meditation</div>
+      <div class="collapsible-body"><span>
+		  <form class="">
+				  <div class="input-field">
+					  <i class="material-icons prefix">access_time</i>
+					  <input type="text" id="time" class="timepicker" placeholder="Pick Time">
+				  </div>
+
+				  <p class="flow-text">Select Days of the Week:</p>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box" />
+				  <label class="check-label" for="filled-in-box">Monday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box2" />
+				  <label class="check-label" for="filled-in-box2">Tuesday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box3" />
+				  <label class="check-label" for="filled-in-box3">Wednesday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box4" />
+				  <label class="check-label" for="filled-in-box4">Thursday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box5" />
+				  <label class="check-label" for="filled-in-box5">Friday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box6" />
+				  <label class="check-label" for="filled-in-box6">Saturday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box7" />
+				  <label class="check-label" for="filled-in-box7">Sunday</label>
+
+				  <br><br>
+				  <!-- Switch -->
+				   <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
+					 <label>
+					   Off
+					   <input type="checkbox">
+					   <span class="lever"></span>
+					   On
+					 </label>
+				   </div>
+		  </form>
+
+	  </span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>School</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons">school</i>School</div>
+      <div class="collapsible-body"><span>
+		  <form class="">
+				  <div class="input-field">
+					  <i class="material-icons prefix">access_time</i>
+					  <input type="text" id="time" class="timepicker" placeholder="Pick Time">
+				  </div>
+
+				  <p class="flow-text">Select Days of the Week:</p>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box" />
+				  <label class="check-label" for="filled-in-box">Monday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box2" />
+				  <label class="check-label" for="filled-in-box2">Tuesday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box3" />
+				  <label class="check-label" for="filled-in-box3">Wednesday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box4" />
+				  <label class="check-label" for="filled-in-box4">Thursday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box5" />
+				  <label class="check-label" for="filled-in-box5">Friday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box6" />
+				  <label class="check-label" for="filled-in-box6">Saturday</label>
+
+				  <input type="checkbox" class="filled-in" id="filled-in-box7" />
+				  <label class="check-label" for="filled-in-box7">Sunday</label>
+
+				  <br><br>
+				  <!-- Switch -->
+				   <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
+					 <label>
+					   Off
+					   <input type="checkbox">
+					   <span class="lever"></span>
+					   On
+					 </label>
+				   </div>
+		  </form>
+
+      </span></div>
+    </li>
+	<li>
+      <div class="red lighten-4 collapsible-header" id="add-activity"><i class="material-icons">add</i>Add Activity</div>
     </li>
   </ul>
 
@@ -110,6 +197,52 @@
 
 				$('#add-activity').click(function(){
 					var newActivity = prompt("Add new Activity:");
+					$('.collapsible').append("<li><div class=\"collapsible-header\"><i class=\"material-icons\"> school</i>School</div>
+					  <div class=\"collapsible-body\"><span>
+						  <form class="">
+								  <div class=\"input-field\">
+									  <i class=\"material-icons prefix\">access_time</i>
+									  <input type=\"text\" id=\"time\" class=\"timepicker\" placeholder=\"Pick Time\">
+								  </div>
+
+								  <p class=\"flow-text\">Select Days of the Week:</p>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box\" />
+								  <label class=\"check-label\" for=\"filled-in-box\">Monday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box2\" />
+								  <label class=\"check-label\" for=\"filled-in-box2\">Tuesday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box3\" />
+								  <label class=\"check-label\" for=\"filled-in-box3\">Wednesday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box4\" />
+								  <label class=\"check-label\" for=\"filled-in-box4\">Thursday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box5\" />
+								  <label class=\"check-label\" for=\"filled-in-box5\">Friday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box6\" />
+								  <label class=\"check-label\" for=\"filled-in-box6\">Saturday</label>
+
+								  <input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box7\" />
+								  <label class=\"check-label\" for=\"filled-in-box7\">Sunday</label>
+
+								  <br><br>
+
+								   <div class=\"switch\">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
+									 <label>
+									   Off
+									   <input type=\"checkbox\">
+									   <span class=\"lever\"></span>
+									   On
+									 </label>
+								   </div>
+						  </form>
+
+					  </span></div>
+					</li>");
+
 				});
 
 				$('.timepicker').pickatime({
