@@ -1,4 +1,5 @@
 var activitySchema = require('../models/activity');
+var mongoose = require('mongoose');
 exports.view = function(req, res){
   res.render('homepage', {
   	user : req.user,
@@ -7,18 +8,17 @@ exports.view = function(req, res){
 };
 
 exports.addActivity = function(req,res){
-	console.log('Enters function');
-	var db = req.db;
-    	var collection = db.get('users');
-    	var newActivity = new Activity({ name:req.body.newAct});
-    	// collection.findOneAndUpdate( {email: user.local.email} , $set{activities:{name:newActivity}} );
-	newActivity.save()
-		.then(item => {
-			res.send(newActivity);
-		})
-		.catch(err => {
-			res.status(400);
-		});
+	mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
+   		if (err) 
+   			throw err
+   		else
+   		{
+			db = database;
+			 var newActivity = { name:req.body.newAct};
+    			db.collection.findOneAndUpdate( {email: req.user.local.email} , {activities:{name:newActivity}} );
+			console.log('Connected to MongoDB');
+   		}
+ 	});
+    	//var collection = db.collection('users');
 	//user.local.activities.push({name:newActivity});	
-	console.log('Add activity should be working.');
 }
