@@ -28,7 +28,7 @@ var index = require('./routes/index');
 // var homepage = require()
 var history = require('./routes/history');
 var analytics = require('./routes/analytics');
-var profile = require('./routes/profile');
+var preferences = require('./routes/preferences');
 var settings = require('./routes/settings');
 var homepage = require('./routes/homepage');
 var signup = require('./routes/signup');
@@ -64,11 +64,11 @@ if ('development' == app.get('env')) {
 }
 
 // required for passport
-app.use(session({ 
+app.use(session({
 	secret: 'intraspectisprettyusefultbh' , // session secret
 	resave: true,
     	saveUninitialized: true
-	})); 
+	}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -81,7 +81,7 @@ app.use(function(req,res,next){
 app.get('/', index.view);
 app.get('/history',history.view);
 app.get('/analytics',analytics.view);
-app.get('/profile',profile.view);
+app.get('/preferences',preferences.view);
 app.get('/settings',settings.view);
 app.get('/homepage',homepage.view);
 app.get('/privacypolicy',privacy.view);
@@ -97,13 +97,13 @@ app.get('/logout', function(req, res) {
 app.post('/addActivity', homepage.addActivity);
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
+        successRedirect : '/preferences', // redirect to the secure preferences section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 
 app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/homepage', // redirect to the secure profile section
+        successRedirect : '/preferences', // redirect to the secure preferences section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -114,7 +114,7 @@ app.post('/login', passport.authenticate('local-login', {
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
             passport.authenticate('facebook', {
-                successRedirect : '/profile',
+                successRedirect : '/preferences',
                 failureRedirect : '/'
 }));
 
@@ -122,7 +122,7 @@ app.post('/login', passport.authenticate('local-login', {
             res.render('connect-local.ejs', { message: req.flash('loginMessage') });
         });
         app.post('/connect/local', passport.authenticate('local-signup', {
-            successRedirect : '/profile', // redirect to the secure profile section
+            successRedirect : '/preferences', // redirect to the secure preferences section
             failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
 }));
@@ -132,7 +132,7 @@ app.post('/login', passport.authenticate('local-login', {
         // handle the callback after facebook has authorized the user
         app.get('/connect/facebook/callback',
             passport.authorize('facebook', {
-                successRedirect : '/profile',
+                successRedirect : '/preferences',
                 failureRedirect : '/'
 }));
 
@@ -140,7 +140,7 @@ app.post('/login', passport.authenticate('local-login', {
         var user            = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/preferences');
         });
 });
 
@@ -154,7 +154,7 @@ http.createServer(app).listen(app.get('port'), function(){
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on 
+    // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();
 

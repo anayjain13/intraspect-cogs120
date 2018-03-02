@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Settings&mdash;Intraspect</title>
+	<title>Preferences&mdash;Intraspect</title>
 	<link href="/css/main.css" rel="stylesheet">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,99 +29,127 @@
    </div>
  </nav>
 
-<div class="container">
+ <div class="container">
+ 	<div class="img-container">
+ 		<img class="user__img responsive-img circle z-depth-3" src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" alt="">
+ 	</div>
+ 		<h3 class="user__name center">Jane Doe</h1>
+ 		<p class="center flow-text user__username">@{{ user.local.email  }}</p>
 
-	<h5>Manage Activities:</h5>
+		<div class="card">
+		    <div class="card-content">
+		      <p class="flow-text">Hey {{ user.local.email  }}! Welcome back to Intraspect!</p>
+		    </div>
+		    <div class="card-tabs">
+		      <ul class="tabs tabs-fixed-width">
+		        <li class="tab"><a href="#test4">Average Score</a></li>
+		        <li class="tab"><a href="#test5">Analysis</a></li>
 
-	<br>
+		        <li class="tab"><a href="#test6">Recommendations</a></li>
+		      </ul>
+		    </div>
+		    <div class="card-content grey lighten-4">
+		      <div id="test4">
+				  <h1 class="center">7</h1>
+			  </div>
+			  <div id="test5">add graph here</div>
+		      <div id="test6">
+				  <p class="flow-text">Yoga has had a positive impact on your happiness on an average. Maybe you want to try to similar activites like Meditation or Running as well?</p>
+			  </div>
+		    </div>
+		  </div>
 
-	<ul class="collapsible" data-collapsible="accordion">
-		{{#each user.local.activities}}
-    <li>
-      <div class="collapsible-header"><i class="material-icons">wb_sunny</i>{{name}}</div>
-      <div class="collapsible-body"><span>
-		  	<form class="">
-					<div class="input-field">
-						<i class="material-icons prefix">access_time</i>
-						<input type="text" id="time" class="timepicker" placeholder="Pick Time">
-					</div>
+		  <!-- Managing Activities -->
 
-					<p class="flow-text">Select Days of the Week:</p>
+		  <ul class="collapsible" data-collapsible="accordion">
+	  		{{#each user.local.activities}}
+	      <li>
+	        <div class="collapsible-header"><i class="material-icons">wb_sunny</i>{{name}}</div>
+	        <div class="collapsible-body"><span>
+	  		  	<form class="">
+	  					<div class="input-field">
+	  						<i class="material-icons prefix">access_time</i>
+	  						<input type="text" id="time" class="timepicker" placeholder="Pick Time">
+	  					</div>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box" />
-			        <label class="check-label" for="filled-in-box">Monday</label>
+	  					<p class="flow-text">Select Days of the Week:</p>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box2" />
-			        <label class="check-label" for="filled-in-box2">Tuesday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box" />
+	  			        <label class="check-label" for="filled-in-box">Monday</label>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box3" />
-			        <label class="check-label" for="filled-in-box3">Wednesday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box2" />
+	  			        <label class="check-label" for="filled-in-box2">Tuesday</label>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box4" />
-			        <label class="check-label" for="filled-in-box4">Thursday</label>
-					<input type="checkbox" class="filled-in" id="filled-in-box5" />
-			        <label class="check-label" for="filled-in-box5">Friday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box3" />
+	  			        <label class="check-label" for="filled-in-box3">Wednesday</label>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box6" />
-			        <label class="check-label" for="filled-in-box6">Saturday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box4" />
+	  			        <label class="check-label" for="filled-in-box4">Thursday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box5" />
+	  			        <label class="check-label" for="filled-in-box5">Friday</label>
 
-					<input type="checkbox" class="filled-in" id="filled-in-box7" />
-			        <label class="check-label" for="filled-in-box7">Sunday</label>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box6" />
+	  			        <label class="check-label" for="filled-in-box6">Saturday</label>
 
-					<br><br>
-					<!-- Switch -->
-					 <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
-					   <label>
-						 Off
-						 <input type="checkbox">
-						 <span class="lever"></span>
-						 On
-					   </label>
-					 </div>
-		  	</form>
+	  					<input type="checkbox" class="filled-in" id="filled-in-box7" />
+	  			        <label class="check-label" for="filled-in-box7">Sunday</label>
 
-
-
-	  </span></div>
-    </li>
-    {{/each}}
+	  					<br><br>
+	  					<!-- Switch -->
+	  					 <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
+	  					   <label>
+	  						 Off
+	  						 <input type="checkbox">
+	  						 <span class="lever"></span>
+	  						 On
+	  					   </label>
+	  					 </div>
+	  		  	</form>
 
 
 
+	  	  </span></div>
+	      </li>
+	      {{/each}}
 
-  </ul>
-  <div class="wrapper">
 
-  </div>
 
-  <!-- <ul class="popout collapsible" data-collapsible="accordion">
-   <li>
-	 <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
-   <li>
-	 <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
-   <li>
-	 <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
- </ul> -->
 
-</div>
+	    </ul>
+	    <div class="wrapper">
 
-<div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" id="add-activity">
-      <i class="large material-icons">add</i>
-    </a>
-    <ul>
-      <!-- <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
-    </ul>
-  </div>
+	    </div>
+
+	    <!-- <ul class="popout collapsible" data-collapsible="accordion">
+	     <li>
+	  	 <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+	  	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	     </li>
+	     <li>
+	  	 <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+	  	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	     </li>
+	     <li>
+	  	 <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+	  	 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	     </li>
+	   </ul> -->
+
+	  </div>
+
+	  <div class="fixed-action-btn">
+	      <a class="btn-floating btn-large red" id="add-activity">
+	        <i class="large material-icons">add</i>
+	      </a>
+	      <ul>
+	        <!-- <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+	        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+	        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+	        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
+	      </ul>
+	    </div>
+
+	</div>
 
 
 		<script type="text/javascript">
@@ -134,6 +162,10 @@
 					var newTag = prompt("Add a new tag:");
 					$('#newtags').append("<input type=\"checkbox\" class=\"filled-in\" id=\"filled-in-box6\" /><label class=\"check-label\" for=\"filled-in-box6\">" + newTag + "</label>");
 				});
+
+				// $('#add-activity').click(function(){
+				// 	var newActivity = prompt("Add new Activity:");
+				// });
 
 				$('#add-activity').click(function(){
 					// var newActivity = prompt("Add new Activity:");
@@ -210,6 +242,7 @@
 					ampmclickable: true, // make AM PM clickable
 					aftershow: function(){} //Function for after opening timepicker
 				});
+
 			});
 
 
