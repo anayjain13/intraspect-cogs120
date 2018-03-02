@@ -36,8 +36,9 @@
 	<br>
 
 	<ul class="collapsible" data-collapsible="accordion">
+		{{#each user.local.activities}}
     <li>
-      <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Yoga</div>
+      <div class="collapsible-header"><i class="material-icons">wb_sunny</i>{{name}}</div>
       <div class="collapsible-body"><span>
 		  	<form class="">
 					<div class="input-field">
@@ -84,7 +85,8 @@
 
 	  </span></div>
     </li>
-    <li>
+    {{/each}}
+    <!-- <li>
       <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Meditation</div>
       <div class="collapsible-body"><span>
 		  <form class="">
@@ -117,7 +119,7 @@
 				  <label class="check-label" for="filled-in-box7">Sunday</label>
 
 				  <br><br>
-				  <!-- Switch -->
+				   Switch 
 				   <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
 					 <label>
 					   Off
@@ -163,7 +165,7 @@
 				  <label class="check-label" for="filled-in-box7">Sunday</label>
 
 				  <br><br>
-				  <!-- Switch -->
+				   Switch 
 				   <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
 					 <label>
 					   Off
@@ -175,7 +177,7 @@
 		  </form>
 
       </span></div>
-    </li>
+    </li> -->
 	<li>
       <div class="red lighten-4 collapsible-header" id="add-activity"><i class="material-icons">add</i>Add Activity</div>
     </li>

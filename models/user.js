@@ -4,32 +4,18 @@ var activitySchema = require('./activity');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
-
     local            : {
         email        : String,
         password     : String,
-        tags : { type : [String], default : ['Relaxed','Playful','Sad']},
-        activities: {type: [String], default:['Yoga','Work','School']
+        tags : { type : [String]},
+        activities: {type: [activitySchema]}
         },
     facebook         : {
         id           : String,
         token        : String,
         name         : String,
         email        : String
-    },
-    twitter          : {
-        id           : String,
-        token        : String,
-        displayName  : String,
-        username     : String
-    },
-    google           : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
     }
-}
 });
 
 // generating a hash

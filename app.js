@@ -19,7 +19,7 @@ var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect');
+var db = mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect');
 
 
 require('./config/passport')(passport);
@@ -72,6 +72,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
 
 //Page display routes
 app.get('/', index.view);
@@ -90,6 +94,7 @@ app.get('/logout', function(req, res) {
         res.redirect('/');
     });
 
+app.post('/addActivity', homepage.addActivity);
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
@@ -104,16 +109,40 @@ app.post('/login', passport.authenticate('local-login', {
     }));
 
 // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', { 
-      scope : ['public_profile', 'email']
-    }));
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect : '/profile',
-            failureRedirect : '/'
-        }));
+            passport.authenticate('facebook', {
+                successRedirect : '/profile',
+                failureRedirect : '/'
+}));
+
+    app.get('/connect/local', function(req, res) {
+            res.render('connect-local.ejs', { message: req.flash('loginMessage') });
+        });
+        app.post('/connect/local', passport.authenticate('local-signup', {
+            successRedirect : '/profile', // redirect to the secure profile section
+            failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
+            failureFlash : true // allow flash messages
+}));
+
+        app.get('/connect/facebook', passport.authorize('facebook', { scope : 'email' }));
+
+        // handle the callback after facebook has authorized the user
+        app.get('/connect/facebook/callback',
+            passport.authorize('facebook', {
+                successRedirect : '/profile',
+                failureRedirect : '/'
+}));
+
+        app.get('/unlink/facebook', function(req, res) {
+        var user            = req.user;
+        user.facebook.token = undefined;
+        user.save(function(err) {
+            res.redirect('/profile');
+        });
+});
 
 //Running the server
 http.createServer(app).listen(app.get('port'), function(){

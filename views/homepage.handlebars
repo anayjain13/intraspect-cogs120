@@ -6,6 +6,7 @@
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	 <script src="../js/homepage.js"></script>
 	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 	<body>
@@ -31,23 +32,22 @@
 
  <div class="container">
 
-<<<<<<< HEAD
 		<form id="mainform" action="/addact" method="post">
-=======
 		<form id="mainform" action="/submit" method="post">
->>>>>>> 48ac45195a6f5d96b38674f19bfcd162e6e847ff
+
 			<!-- <h6>Select Activity</h6> -->
 			<div class="activity-container">
 				<p class="input-field">
-					<select>
-				{{#each activities}}
-				      <option value="{{@index}}">{{activities}}</option>
+				<select>
+				{{#each user.local.activities}}
+				      <option value="{{@index}}">{{name}}</option>
 				 {{/each}}
 				    </select>
 				    <label>Select Activity</label>
 
 				</p>
 				<a class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></a>
+				<!--<input id="newAct">-->
 			</div>
 
 
@@ -78,7 +78,7 @@
 				<p class="flow-text">Add Tags:</p>
 				{{#each user.local.tags}}
 				<input type="checkbox" class="filled-in" id="filled-in-box{{@index}}" />
-		        <label class="check-label" for="filled-in-box{{@index}}">{{user.local.tags}}</label>
+		        <label class="check-label" for="filled-in-box{{@index}}">Tag: {{ tags }}</label>
 
 <!-- 				<input type="checkbox" class="filled-in" id="filled-in-box2" />
 		        <label class="check-label" for="filled-in-box2">Playful</label>
@@ -114,7 +114,7 @@
 	</div>
 
 
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			$( document ).ready(function(){
 				$('select').material_select();
 
@@ -128,12 +128,11 @@
 				$('#add-activity').click(function(){
 					var newActivity = prompt("Add new Activity:");
 					$('.dropdown-content').append("<li><span>" + newActivity + "</span></li>");
+
 				});
 
 			});
-
-
-		</script>
+		</script> -->
 
 	</body>
 </html>

@@ -5,10 +5,11 @@ const activitySchema = new Schema({
 	name: String,
 	daysofweek: [String],
 	notif_time: Date,
-	comments: {type:[String], default:['Inspiring first session','Felt at peace','Traffic made me angry']},
-	Score: {type: [Number], default:[7,8,4]}
+	comments: [String],
+	Score: [Number],
+	log_time: [Date]
 });
 
 const activity = mongoose.model('activity', activitySchema);
 
-module.exports = activity;
+module.exports = activitySchema;
