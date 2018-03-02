@@ -78,7 +78,7 @@
 				<p class="flow-text">Add Tags:</p>
 				{{#each user.local.tags}}
 				<input type="checkbox" class="filled-in" id="filled-in-box{{@index}}" />
-		        <label class="check-label" for="filled-in-box{{@index}}">Tag: {{ tags }}</label>
+		        <label class="check-label" for="filled-in-box{{@index}}">{{this}}</label>
 
 <!-- 				<input type="checkbox" class="filled-in" id="filled-in-box2" />
 		        <label class="check-label" for="filled-in-box2">Playful</label>
@@ -113,8 +113,7 @@
 		</form>
 	</div>
 
-
-		<!-- <script type="text/javascript">
+		<!-- k
 			$( document ).ready(function(){
 				$('select').material_select();
 

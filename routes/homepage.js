@@ -8,7 +8,10 @@ exports.view = function(req, res){
 
 exports.addActivity = function(req,res){
 	console.log('Enters function');
-	var newActivity = new Activity({ name:req.body.newAct});
+	var db = req.db;
+    	var collection = db.get('users');
+    	var newActivity = new Activity({ name:req.body.newAct});
+    	// collection.findOneAndUpdate( {email: user.local.email} , $set{activities:{name:newActivity}} );
 	newActivity.save()
 		.then(item => {
 			res.send(newActivity);
