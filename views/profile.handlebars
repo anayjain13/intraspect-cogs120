@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Preferences&mdash;Intraspect</title>
+	<title>Profile&mdash;Intraspect</title>
 	<link href="/css/main.css" rel="stylesheet">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,13 +18,13 @@
 	   <li><a href="/homepage">Home</a></li>
 	   <li><a href="/history">History</a></li>
 	   <li><a href="/preferences">Preferences</a></li>
-	   <li><a href="/settings">Settings</a></li>
+	   <li><a href="/profile">Profile</a></li>
 	 </ul>
 	 <ul class="side-nav" id="mobile-demo">
 	   <li><a href="/homepage">Home</a></li>
 	   <li><a href="/history">History</a></li>
 	   <li><a href="/preferences">Preferences</a></li>
-	   <li><a href="/settings">Settings</a></li>
+	   <li><a href="/profile">Profile</a></li>
 	 </ul>
    </div>
  </nav>
@@ -49,10 +49,19 @@
 		      </ul>
 		    </div>
 		    <div class="card-content grey lighten-4">
-		      <div id="test4">
-				  <h1 class="center">7</h1>
+			<div id="test4">
+			  <p class="flow-text center">
+				  <small>Your Average Score is:</small>
+			  </p>
+			  <h1 class="center">
+				  7
+			  </h1>
+		  </div>
+			  <div id="test5">
+				  <center>
+				  	<img src="/img/graph.png" class="responsive-img" alt="">
+				  </center>
 			  </div>
-			  <div id="test5">add graph here</div>
 		      <div id="test6">
 				  <p class="flow-text">Yoga has had a positive impact on your happiness on an average. Maybe you want to try to similar activites like Meditation or Running as well?</p>
 			  </div>
@@ -61,7 +70,7 @@
 
 		  <!-- Managing Activities -->
 
-		  <ul class="collapsible" data-collapsible="accordion">
+		  <!-- <ul class="collapsible" data-collapsible="accordion">
 	  		{{#each user.local.activities}}
 	      <li>
 	        <div class="collapsible-header"><i class="material-icons">wb_sunny</i>{{name}}</div>
@@ -95,7 +104,7 @@
 	  			        <label class="check-label" for="filled-in-box7">Sunday</label>
 
 	  					<br><br>
-	  					<!-- Switch -->
+
 	  					 <div class="switch">Notifications &nbsp;&nbsp;&nbsp;&nbsp;
 	  					   <label>
 	  						 Off
@@ -118,7 +127,7 @@
 	    </ul>
 	    <div class="wrapper">
 
-	    </div>
+	    </div> -->
 
 	    <!-- <ul class="popout collapsible" data-collapsible="accordion">
 	     <li>
