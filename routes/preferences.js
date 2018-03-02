@@ -1,5 +1,5 @@
 exports.view = function(req, res){
-  res.render('profile' , {
+  res.render('preferences' , {
   	user : req.user
   });
 };
