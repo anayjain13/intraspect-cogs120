@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
+var activityLog = require('./log');
 
 const activitySchema = mongoose.Schema({
 	name: String,
 	daysofweek: [String],
 	notif_time: Date,
-	comments: [String],
-	Score: [Number],
-	log_time: [Date]
+	log: [activityLog]
 });
 
 const activity = mongoose.model('activity', activitySchema);

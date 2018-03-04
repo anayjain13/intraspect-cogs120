@@ -107,20 +107,29 @@ module.exports = function(passport) {
                     newUser.local.tags = ['Happy','Relaxed'];
                     newUser.local.activities = [{
                                                                                     name:'Yoga',
-                                                                                    comments:['Great, refreshing session','Stuck in traffic'],
-                                                                                    score:['7','4'],
-                                                                                    log_time: [
-                                                                                        Date('2018-02-12T18:14:30Z'),
-                                                                                        Date('2018-02-12T18:12:00Z')
-                                                                                        ]
-                                                                                },{
+                                                                                    log: [{
+                                                                                        comments:'Great, refreshing session',
+                                                                                        score:7,
+                                                                                        log_time:Date('2018-02-12T18:14:30Z')
+                                                                                    },
+                                                                                    {
+                                                                                        comments:'Stuck in traffic',
+                                                                                        score:4,
+                                                                                        log_time:Date('2018-02-12T18:12:00Z')
+                                                                                    }]
+                                                                                },
+                                                                                {
                                                                                     name:'Running',
-                                                                                    comments:['Amazing run','Got mud on new shorts'],
-                                                                                    score:['7','4'],
-                                                                                    log_time: [
-                                                                                        Date('2018-02-10T08:14:30Z'),
-                                                                                       Date('2018-02-11T08:12:00Z')
-                                                                                        ]
+                                                                                    log: [{
+                                                                                        comments:'Amazing run',
+                                                                                        score:7,
+                                                                                        log_time:Date('2018-02-12T18:14:30Z')
+                                                                                    },
+                                                                                    {
+                                                                                        comments:'Got mud on new shorts',
+                                                                                        score:4,
+                                                                                        log_time:Date('2018-02-12T18:12:00Z')
+                                                                                    }]
                                                                             }];
                     newUser.save(function(err) {
                         if (err)
