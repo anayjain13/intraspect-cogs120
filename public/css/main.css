@@ -101,12 +101,14 @@ button {
 }
 
 .img-container {
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
+	width: 45%;
 }
 
 .user__img {
 	display: block;
+	width: 30%;
 }
 
 .user__name {

@@ -30,9 +30,10 @@
  </nav>
 
  <div class="container">
- 	<div class="img-container">
- 		<img class="user__img responsive-img circle z-depth-3" src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" alt="">
- 	</div>
+	 <center>
+		<img class="user__img responsive-img circle z-depth-3" src="https://pbs.twimg.com/profile_images/665742181450149888/L7aMwy9c_400x400.jpg" alt="">
+	</center>
+
  		<h3 class="user__name center">Jane Doe</h1>
  		<p class="center flow-text user__username">@{{ user.local.email  }}</p>
 
@@ -83,25 +84,25 @@
 
 	  					<p class="flow-text">Select Days of the Week:</p>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box" />
-	  			        <label class="check-label" for="filled-in-box">Monday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}1" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}1">Monday</label>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box2" />
-	  			        <label class="check-label" for="filled-in-box2">Tuesday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}2" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}2">Tuesday</label>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box3" />
-	  			        <label class="check-label" for="filled-in-box3">Wednesday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}3" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}3">Wednesday</label>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box4" />
-	  			        <label class="check-label" for="filled-in-box4">Thursday</label>
-	  					<input type="checkbox" class="filled-in" id="filled-in-box5" />
-	  			        <label class="check-label" for="filled-in-box5">Friday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}4" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}4">Thursday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}5" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}5">Friday</label>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box6" />
-	  			        <label class="check-label" for="filled-in-box6">Saturday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}6" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}6">Saturday</label>
 
-	  					<input type="checkbox" class="filled-in" id="filled-in-box7" />
-	  			        <label class="check-label" for="filled-in-box7">Sunday</label>
+	  					<input type="checkbox" class="filled-in" id="some{{@index}}: {{this}}7" />
+	  			        <label class="check-label" for="some{{@index}}: {{this}}7">Sunday</label>
 
 	  					<br><br>
 	  					<!-- Switch -->
@@ -229,6 +230,17 @@
 		  	'</form></span></div>' +
     '</li></ul>').appendTo('.wrapper');
 	$('.new-activity-collapsible').collapsible();
+	$('.timepicker').pickatime({
+		default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+		fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+		twelvehour: true, // Use AM/PM or 24-hour format
+		donetext: 'OK', // text for done-button
+		cleartext: 'Clear', // text for clear-button
+		canceltext: 'Cancel', // Text for cancel-button
+		autoclose: false, // automatic close timepicker
+		ampmclickable: true, // make AM PM clickable
+		aftershow: function(){} //Function for after opening timepicker
+	});
 
 
 					// $('.collapsible').append(line1 + line2 + line3 + line4 + line5 + line6 + line7 + line8 + line9 + line10 + line11 + line1a2 + line13 + line14 + line15 + line16 + line17 + line18 + line19 + line20 + line21 + line22 + line23 + line24 + line25 + line26);
