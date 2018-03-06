@@ -19,7 +19,12 @@ var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
 
 
-var db = mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect');
+var db 
+
+mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect', (err, database) => {
+    if (err) return console.log(err)
+  db = database
+});
 
 
 require('./config/passport')(passport);
@@ -105,8 +110,8 @@ app.post('/signup', passport.authenticate('local-signup', {
     }));
 
 app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/preferences', // redirect to the secure preferences section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
+        successRedirect : '/homepage', // redirect to the secure preferences section
+        failureRedirect : '/', // redirect back to the login page if there is an error
         failureFlash : true // allow flash messages
     }));
 

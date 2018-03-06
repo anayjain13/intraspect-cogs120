@@ -12,14 +12,11 @@ $( document ).ready(function(){
 				$('#add-activity').click(function(){
 					var newActivity = prompt("Add new Activity:");
 					newToSend = newActivity;
-					$.post('addActivity',
-					{
-						name:newActivity
-					}, postCallback);
-				});
-					function postCallback(res){
-  						alert("Activity successfully submitted!");
+					$.post('addActivity',  function() {console.log("posted")})
+					.done(function postCallback(res){
+  						console.log('Update done')
   						$('.dropdown-content').append("<li><span>" + newActivity + "</span></li>");
-  					}
+  					});
+				});
 
 				});

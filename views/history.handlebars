@@ -53,7 +53,7 @@
 				      <span class="card-title activator grey-text text-darken-4">{{name}}<i class="material-icons right">more_vert</i></span>
 				      <div class="card-action card-action--dual">
 					 <span><i class="material-icons">filter_tilt_shift</i>7</span>
-					<span><i class="material-icons">access_time</i>7:30pm</span>
+					<span><i class="material-icons">access_time</i>{{log.log_time}}</span>
 
 				   </div>
 				   {{#each user.local.tags}}
@@ -64,7 +64,7 @@
 				    </div>
 				    <div class="card-reveal">
 				      <span class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></span>
-				      <p>{{comments}}</p>
+				      <p>{{log.comments}}</p>
 				    </div>
 				  </div>
 		   	</div>
