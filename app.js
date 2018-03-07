@@ -112,7 +112,13 @@ app.post('/addact', function(req,res){
          var collection = db.collection('users');
         // console.log(req.body.newAct);
         collection.update({'local.email':req.user.local.email},
-                              {$push: {'local.activities' : newActivity}});
+                              {$push: {'local.activities' : newActivity}})
+                                .then(function(){
+                                    res.redirect('/homepage');
+                                })
+                                .catch(function() {
+                                    console.log('Error');
+                                });
                                 // .then(()=>{
                                 //     res.end({
                                 //         success: true
