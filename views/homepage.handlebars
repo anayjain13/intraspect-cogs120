@@ -32,8 +32,7 @@
 
  <div class="container">
 
-		<form id="altform" action="/addact" method="post">
-		<form id="mainform" action="/submit" method="post">
+		<form id="mainform" action="/submit" method="post"></form>
 
 			<!-- <h6>Select Activity</h6> -->
 			<div class="activity-container">
@@ -46,8 +45,12 @@
 				    <label>Select Activity</label>
 
 				</p>
-				<a class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></a>
-				<input name="newAct">
+			<form action="/addact" method="post">
+				<input type="text" name="newAct" placeholder="Enter new activity"/>
+				<button type="submit" value="+"/>
+				<!-- <a class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></a> -->
+			</form>
+				<!-- <input name="newAct"> -->
 			</div>
 
 

@@ -54,10 +54,10 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(methodOverride());
-app.use(express.cookieParser('IxD secret key'));
+app.use(express.cookieParser('bschmokes'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.session());
+app.use(express.session({secret:'bschmokes'}));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -101,7 +101,31 @@ app.get('/logout', function(req, res) {
         res.redirect('/');
     });
 
-app.post('/addActivity', homepage.addActivity);
+app.post('/addact', function(req,res){
+    var newActivity = {name:req.body.newAct};
+     mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
+         if (err) 
+             throw err
+         else
+         {
+         db = database;                            
+         var collection = db.collection('users');
+        // console.log(req.body.newAct);
+        collection.update({'local.email':req.user.local.email},
+                              {$push: {'local.activities' : newActivity}});
+                                // .then(()=>{
+                                //     res.end({
+                                //         success: true
+                                //     });
+                                // })
+                                // .catch(()=>{
+                                //     res.end({
+                                //         success: false
+                                //     });
+                                // });
+         }
+     });
+});
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {
         successRedirect : '/preferences', // redirect to the secure preferences section
@@ -153,7 +177,7 @@ app.post('/login', passport.authenticate('local-login', {
 
 //Running the server
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Live on port:  ' + app.get('port'));
 });
 
 
