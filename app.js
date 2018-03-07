@@ -119,18 +119,35 @@ app.post('/addact', function(req,res){
                                 .catch(function() {
                                     console.log('Error');
                                 });
-                                // .then(()=>{
-                                //     res.end({
-                                //         success: true
-                                //     });
-                                // })
-                                // .catch(()=>{
-                                //     res.end({
-                                //         success: false
-                                //     });
-                                // });
          }
      });
+});
+
+app.post('/addtag',function(req,res){
+    var newTag = req.body.newTag;
+    mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
+         if (err) 
+             throw err
+         else
+         {
+         db = database;                            
+         var collection = db.collection('users');
+        // console.log(req.body.newAct);
+        collection.update({'local.email':req.user.local.email},
+                              {$push: {'local.tags' : newTag}})
+                                .then(function(){
+                                    res.redirect('/homepage');
+                                })
+                                .catch(function() {
+                                    console.log('Error');
+                                });
+         }
+     });
+});
+
+app.post('/addlog',function(req,res){
+    var currActivity = req.body.currAct;
+    console.log(currActivity);
 });
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {

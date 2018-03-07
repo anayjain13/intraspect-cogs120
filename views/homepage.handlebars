@@ -34,12 +34,11 @@
 
 		<form id="mainform" action="/submit" method="post"></form>
 
-			<!-- <h6>Select Activity</h6> -->
 			<div class="activity-container">
 				<p class="input-field">
 				<select>
 				{{#each user.local.activities}}
-				      <option value="{{@index}}">{{name}}</option>
+				      <option name='currAct' value="{{@index}}">{{name}}</option>
 				 {{/each}}
 				    </select>
 				    <label>Select Activity</label>
@@ -51,12 +50,7 @@
 				<!-- <a class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></a> -->
 			</form>
 			</div>
-
-
-
 			<br>
-
-
 			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
 				<label for="" name="comment">How did this activity make you feel?</label>
 				<p class="range-field">
@@ -67,15 +61,6 @@
 			<!-- <hr> -->
 			<textarea name="reason" class="materialize-textarea" placeholder="Why do you feel this way?"></textarea>
 			<br>
-
-			<!-- <ul>
-
-				<h4>Add Tags:</h4>
-				<li><input type="checkbox"> Elated</li>
-				<li><input type="checkbox"> Playful</li>
-				<li><input type="checkbox"> Excited</li>
-				<li><a href="#">+ Create New Tag</a></li>
-			</ul> -->
 
 				<p class="flow-text">Add Tags:</p>
 				{{#each user.local.tags}}
@@ -105,7 +90,11 @@
 				<br><br>
 
 				<!-- <a href="#" id="new-tag">+ Create New Tag</a> -->
-				<a href="#" class="waves-effect waves-light btn-flat" id="new-tag"><i class="material-icons left">add</i>Create New Tag</a>
+				<form action="/addtag" method="post">
+					<input type="text" name="newTag" placeholder="Enter new tag"/>
+					<button type="submit" value="+ Create New Tag"/>
+				</form>
+				<!-- <a href="#" class="waves-effect waves-light btn-flat" id="new-tag"><i class="material-icons left">add</i>Create New Tag</a> -->
 
 			<br>
 			<br>
