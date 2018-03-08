@@ -1,15 +1,15 @@
 {
-  "name": "IntroHCI",
+  "name": "Intraspect",
   "version": "0.0.1",
-  "author": "Intro HCI Staff",
+  "author": "Prabhav Khandelwal, Ribhu Lahiri & Anay Jain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/ribhu97/intraspect-cogs120"
   },
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
   },
   "dependencies": {
     "bcrypt-nodejs": "latest",

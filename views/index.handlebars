@@ -7,10 +7,11 @@
 	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	 <link href="https://fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i|Barlow:300,300i,400,400i,700,700i|Fira+Sans+Extra+Condensed:300,300i,400,400i,700,700i,900,900i|Mada:400,500,600,700,900|Nanum+Gothic:400,700,800|Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Nunito:400,400i,600,600i,800,800i,900,900i" rel="stylesheet">
 	 <link rel="stylesheet" href="/css/canine.css">
 </head>
 	<body>
-		<nav>
+		<nav class="grey darken-4">
    <div class="nav-wrapper">
 	 <a href="#" class="brand-logo">Intraspect</a>
 	 <a href="#" data-activates="mobile-demo" class="button-collapse"></a>
@@ -23,40 +24,36 @@
     	{{/if}}
 	<div class="container">
 
+		<p class="flow-text center intro-text">Hello!</p>
+		<p class="flow-text center welcome-text">Welcome to Intraspect</p>
+
 
 		 <div class="row">
-		<!-- <form class="col s12" action="/login" method="post">
-		<div class="row">
-		 <div class="input-field col s12">
-		   <i class="material-icons prefix">account_circle</i>
-		   <input id="icon_prefix" type="text" class="validate">
-		   <label for="icon_prefix">Username</label>
-		 </div>
 
-		 <div class="input-field col s12">
-		   <i class="material-icons prefix">security</i>
-		   <input id="icon_telephone" type="password" class="validate">
-		   <label for="icon_telephone">Password</label>
-		 </div>
-		</div>
-		<center><button type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">send</i>Login</button></center>
 
-		</form> -->
-
-		 <form action="/login" method="post">
+		 <form action="/login" method="post" class="form--login">
+			 <center>
+			 	<span class="center form__label">Returning back? Log in!</span>
+			 	<hr>
+			 <center>
         			<div class="form-group">
-            				<label>Email</label>
-            				<input type="text" class="form-control" name="email">
+							<center>
+								<label>Email</label>
+            					<input type="email" class="form-control" name="email" class="validate" placeholder="email">
+							</center>
         			</div>
         			<div class="form-group">
-            				<label>Password</label>
-            				<input type="password" class="form-control" name="password">
+							<center>
+								<label>Password</label>
+            					<input type="password" class="form-control" name="password" placeholder="password">
+							</center>
         			</div>
 
-        			<button type="submit" class="btn btn-warning btn-lg">Login</button>
+        			<button type="submit" class="btn btn-warning btn-lg grey darken-4 btn-large"><span class="button-text">Login</span></button>
+        			<a href="/signup" class="btn btn-warning btn-lg grey darken-4 btn-large"><span class="button-text">Signup</span></a>
     		</form>
 
-    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+    <!-- <a href="/auth/facebook" class="btn btn-primary btn-large grey darken-4"><span class="fa fa-facebook"></span> <span class="button-text">Facebook</span></a> -->
 		</div>
 
 </div>
@@ -64,7 +61,7 @@
 		<script type="text/javascript">
 			$( document ).ready(function(){
 
-				$(".button-collapse").sideNav();
+				// $(".button-collapse").sideNav();
 			});
 		</script>
 	</body>

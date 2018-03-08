@@ -104,11 +104,11 @@ app.get('/logout', function(req, res) {
 app.post('/addact', function(req,res){
     var newActivity = {name:req.body.newAct};
      mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
-         if (err) 
+         if (err)
              throw err
          else
          {
-         db = database;                            
+         db = database;
          var collection = db.collection('users');
         // console.log(req.body.newAct);
         collection.update({'local.email':req.user.local.email},
@@ -126,11 +126,11 @@ app.post('/addact', function(req,res){
 app.post('/addtag',function(req,res){
     var newTag = req.body.newTag;
     mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
-         if (err) 
+         if (err)
              throw err
          else
          {
-         db = database;                            
+         db = database;
          var collection = db.collection('users');
         // console.log(req.body.newAct);
         collection.update({'local.email':req.user.local.email},
@@ -233,9 +233,9 @@ function isLoggedIn(req, res, next) {
 
 var sass = require('node-sass');
 sass.render({
-  file: 'canine.scss'
+  file: '/css/canine.scss',
 }, function(err, result) { /*...*/ });
 // OR
-var result = sass.renderSync({
-  file: 'canine.css'
-});
+// var result = sass.renderSync({
+//   file: '/css/canine.css',
+// });
