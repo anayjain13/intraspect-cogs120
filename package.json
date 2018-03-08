@@ -8,9 +8,7 @@
   },
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "start": "node app.js",
-  },
+  "scripts": {"start": "node app.js"},
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.15.2",
