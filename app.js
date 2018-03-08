@@ -19,7 +19,7 @@ var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
 
 
-var db 
+var db
 
 mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect', (err, database) => {
     if (err) return console.log(err)
@@ -168,3 +168,27 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
+
+// sass bullcrap
+
+// var sass = require('node-sass');
+// sass.render({
+//   file: canine,
+//   [, options..]
+// }, function(err, result) { /*...*/ });
+// // OR
+// var result = sass.renderSync({
+//   data: scss_content
+//   [, options..]
+// });
+
+
+
+var sass = require('node-sass');
+sass.render({
+  file: 'canine.scss'
+}, function(err, result) { /*...*/ });
+// OR
+var result = sass.renderSync({
+  file: 'canine.css'
+});

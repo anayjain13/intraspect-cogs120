@@ -24,6 +24,7 @@
     "mongodb": "*",
     "mongoose": "*",
     "morgan": "~1.7.0",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.15.1",
     "passport": "~0.3.2",
     "passport-facebook": "~2.1.1",
