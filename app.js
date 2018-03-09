@@ -146,8 +146,38 @@ app.post('/addtag',function(req,res){
 });
 
 app.post('/addlog',function(req,res){
-    var currActivity = req.body.currAct;
-    console.log(currActivity);
+    var currActivity = req.body.curAct;
+    var score = req.body.score;
+    var comment = req.body.reason;
+    mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
+         if (err)
+             throw err
+         else
+         {
+         db = database;
+         var collection = db.collection('users');
+         // collection.find({'local.email':req.user.local.email},
+         //  {'local.activities':{$slice : [currActivity,1]}}).then(function(user){
+         //    var retrievedAct = user.local.activities.name;
+         //  }).catch(function() {
+         //                            console.log('Error');
+         //                        });
+         console.log(retrievedAct.local.activities.name);
+        // console.log(req.body.newAct);
+        collection.update({'local.activities.name':currActivity},
+                              {$push: {'local.activities.log' : {
+                                comments: comment,
+                                score: score,
+                                log_time: Date.now()
+                              }}})
+                                .then(function(){
+                                    res.redirect('/homepage');
+                                })
+                                .catch(function() {
+                                    console.log('Error');
+                                });
+         }
+     });
 });
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {

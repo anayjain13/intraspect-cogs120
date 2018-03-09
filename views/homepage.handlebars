@@ -46,11 +46,11 @@
 	 <p class="flow-text center intro-text">Create Log</p>
 	 <p class="flow-text center welcome-text">Share how you're feeling.</p>
 
-		<form id="mainform" action="/submit" method="post" class="form--log">
+		<form id="mainform" action="/addlog" method="post" class="form--log">
 
 
 				<p class="input-field"><br>
-					<select>
+					<select name="curAct">
 						{{#each user.local.activities}}
 				      		<option name='currAct' value="{{@index}}">{{name}}</option>
 				 		{{/each}}
@@ -60,14 +60,14 @@
 				</p>
 
 
-			<form action="/addact" method="post" class="form--activity">
+			<!-- <form action="/addact" method="post" class="form-activity"> -->
 				<div class="activity-container">
 					<input type="text" class="new-activity-name" name="newAct" placeholder="Don&rsquo;t see your activity here? Add new." style="width:80%;"/>
 
-					<button class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></button>
+					<button class="btn-floating btn-small waves-effect waves-light red" id="add-activity" formaction="/addact"><i class="material-icons">add</i></button>
 				</div>
 
-			</form>
+			<!-- </form> -->
 
 			<br>
 
@@ -97,22 +97,22 @@
 				<br><br>
 
 				<!-- <a href="#" id="new-tag">+ Create New Tag</a> -->
-				<form action="/addtag" method="post">
+				<!-- <form action="/addtag" method="post"> -->
 					<div class="activity-container">
 						<input type="text" name="newTag" placeholder="Don&rsquo;t see a tag you need? Add new." style="width:80%;"/>
-						<button class="btn-floating btn-small waves-effect waves-light red" type="submit" value="+ Create New Tag"/>
+						<button class="btn-floating btn-small waves-effect waves-light red" type="submit" value="+ Create New Tag" formaction="/addtag" />
 							<i class="material-icons">add</i>
 						</button>
 					</div>
 
-				</form>
+				<!-- </form> -->
 				<!-- <a href="#" class="waves-effect waves-light btn-flat" id="new-tag"><i class="material-icons left">add</i>Create New Tag</a> -->
 
 			<br>
 			<br>
 
 			<center>
-				<a class="btn-large grey darken-4 waves-effect waves-light" href="/history">Submit Log</a>
+				<button class="btn-large grey darken-4 waves-effect waves-light" >Submit Log</button>
 			</center>
 		</form>
 	</div>
