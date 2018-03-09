@@ -84,22 +84,10 @@
 				<p class="big-label">Add Tags:</p>
 				{{#each user.local.tags}}
 				<input type="checkbox" class="filled-in" id="filled-in-box{{@index}}" />
-		        <label class="check-label" for="filled-in-box{{@index}}">{{this}}</label>
+		        <label class="check-label" for="filled-in-box{{@index}}" class="check-label">
+					<span class="check-label">{{this}}</span>
+				</label>
 
-<!-- 				<input type="checkbox" class="filled-in" id="filled-in-box2" />
-		        <label class="check-label" for="filled-in-box2">Playful</label>
-
-				<input type="checkbox" class="filled-in" id="filled-in-box3" />
-		        <label class="check-label" for="filled-in-box3">Enthusiastic</label>
-
-				<input type="checkbox" class="filled-in" id="filled-in-box4" />
-		        <label class="check-label" for="filled-in-box4">Sad</label>
-
-				<input type="checkbox" class="filled-in" id="filled-in-box5" />
-		        <label class="check-label" for="filled-in-box5">Morose</label>
-
-				<input type="checkbox" class="filled-in" id="filled-in-box6" />
-		        <label class="check-label" for="filled-in-box6">Energetic</label> -->
 				{{/each}}
 
 				<span id="newtags">
@@ -110,16 +98,22 @@
 
 				<!-- <a href="#" id="new-tag">+ Create New Tag</a> -->
 				<form action="/addtag" method="post">
-					<input type="text" name="newTag" placeholder="Enter new tag"/>
-					<button type="submit" value="+ Create New Tag"/>
+					<div class="activity-container">
+						<input type="text" name="newTag" placeholder="Don&rsquo;t see a tag you need? Add new." style="width:80%;"/>
+						<button class="btn-floating btn-small waves-effect waves-light red" type="submit" value="+ Create New Tag"/>
+							<i class="material-icons">add</i>
+						</button>
+					</div>
+
 				</form>
 				<!-- <a href="#" class="waves-effect waves-light btn-flat" id="new-tag"><i class="material-icons left">add</i>Create New Tag</a> -->
 
 			<br>
 			<br>
-			<br>
 
-			<a class="btn-floating btn-large waves-effect waves-light red right" href="/history"><i class="material-icons">check</i></a>
+			<center>
+				<a class="btn-large grey darken-4 btn-large waves-effect waves-light center" href="/history"><i class="material-icons submit-icon">check</i> Submit Log</a>
+			</center>
 		</form>
 	</div>
 	</body>

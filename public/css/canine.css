@@ -178,3 +178,13 @@ input[type="range"] {
 textarea.big-label {
     font-size: 1.725rem;
 }
+
+.check-label {
+    font-size: 1.225rem;
+    color: #555;
+}
+
+.submit-icon {
+    position: relative;
+    bottom: -4px;
+}
