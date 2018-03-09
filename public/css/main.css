@@ -72,12 +72,12 @@ button {
 }
 
 .activity-container {
-	display: flex;
-	justify-content: space-around;
+	/* display: flex; */
+	/* justify-content: space-around; */
 }
 
 .input-field {
-	flex-grow: 2;
+	/* flex-grow: 2; */
 }
 
 .card-action--dual {

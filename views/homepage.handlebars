@@ -43,37 +43,45 @@
 
  <div class="container">
 
-		<form id="mainform" action="/submit" method="post"></form>
+	 <p class="flow-text center intro-text">Create Log</p>
+	 <p class="flow-text center welcome-text">Share how you're feeling.</p>
 
-			<div class="activity-container">
-				<p class="input-field">
-				<select>
-				{{#each user.local.activities}}
-				      <option name='currAct' value="{{@index}}">{{name}}</option>
-				 {{/each}}
+		<form id="mainform" action="/submit" method="post" class="form--log">
+
+
+				<p class="input-field"><br>
+					<select>
+						{{#each user.local.activities}}
+				      		<option name='currAct' value="{{@index}}">{{name}}</option>
+				 		{{/each}}
 				    </select>
-				    <label>Select Activity</label>
+				    <label>Hey there! Just got done with?</label>
 
 				</p>
-			<form action="/addact" method="post">
-				<input type="text" name="newAct" placeholder="Enter new activity"/>
-				<button type="submit" value="+"/>
-				<!-- <a class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></a> -->
+
+
+			<form action="/addact" method="post" class="form--activity">
+				<div class="activity-container">
+					<input type="text" class="new-activity-name" name="newAct" placeholder="Don&rsquo;t see your activity here? Add new." style="width:80%;"/>
+
+					<button class="btn-floating btn-small waves-effect waves-light red" id="add-activity"><i class="material-icons">add</i></button>
+				</div>
+
 			</form>
-			</div>
+
 			<br>
-			<!-- <center><h6 class="happy">How happy do you feel?</h3></center> -->
-				<label for="" name="comment">How did this activity make you feel?</label>
+
+				<label for="score" class="big-label">On a scale of 1-10, how happy did it make you feel?</label>
 				<p class="range-field">
 		      	<input type="range" id="test5" min="1" max="10" name="score"/>
 
 		    </p>
 
 			<!-- <hr> -->
-			<textarea name="reason" class="materialize-textarea" placeholder="Why do you feel this way?"></textarea>
+			<textarea name="reason" class="materialize-textarea big-label" placeholder="I feel this way because..."></textarea>
 			<br>
 
-				<p class="flow-text">Add Tags:</p>
+				<p class="big-label">Add Tags:</p>
 				{{#each user.local.tags}}
 				<input type="checkbox" class="filled-in" id="filled-in-box{{@index}}" />
 		        <label class="check-label" for="filled-in-box{{@index}}">{{this}}</label>
