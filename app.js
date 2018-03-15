@@ -145,6 +145,8 @@ app.post('/addtag',function(req,res){
      });
 });
 
+// {'local.activities':{$slice : [currActivity,1]}}
+
 app.post('/addlog',function(req,res){
     var currActivity = req.body.curAct;
     var score = req.body.score;
@@ -156,15 +158,13 @@ app.post('/addlog',function(req,res){
          {
          db = database;
          var collection = db.collection('users');
-         // collection.find({'local.email':req.user.local.email},
-         //  {'local.activities':{$slice : [currActivity,1]}}).then(function(user){
-         //    var retrievedAct = user.local.activities.name;
-         //  }).catch(function() {
-         //                            console.log('Error');
-         //                        });
-         console.log(retrievedAct.local.activities.name);
+         var retrievedAct = collection.find({'local.email':req.user.local.email},
+          {}).toArray().then(console.log(retrievedAct)).catch(function(){console.log('Error')});
+          if (retrievedAct.length > 0) { printjson (retrievedAct[0]); }
+          console.log(currActivity);
+          console.log(retrievedAct[0]);
         // console.log(req.body.newAct);
-        collection.update({'local.activities.name':currActivity},
+        collection.update({'local.activities.name':retrievedAct[0]},
                               {$push: {'local.activities.log' : {
                                 comments: comment,
                                 score: score,
