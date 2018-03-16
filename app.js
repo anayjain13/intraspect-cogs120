@@ -145,12 +145,11 @@ app.post('/addtag',function(req,res){
      });
 });
 
-// {'local.activities':{$slice : [currActivity,1]}}
-
 app.post('/addlog',function(req,res){
     var currActivity = req.body.curAct;
     var score = req.body.score;
     var comment = req.body.reason;
+    var retrievedAct;
     mongoose.connect('mongodb://ribhu:pass1234@ds044907.mlab.com:44907/intraspect',function (err, database) {
          if (err)
              throw err
@@ -158,26 +157,33 @@ app.post('/addlog',function(req,res){
          {
          db = database;
          var collection = db.collection('users');
-         var retrievedAct = collection.find({'local.email':req.user.local.email},
-          {}).toArray().then(console.log(retrievedAct)).catch(function(){console.log('Error')});
-          if (retrievedAct.length > 0) { printjson (retrievedAct[0]); }
-          console.log(currActivity);
-          console.log(retrievedAct[0]);
-        // console.log(req.body.newAct);
-        collection.update({'local.activities.name':retrievedAct[0]},
+         collection.find({'local.email':req.user.local.email},
+          {'local.activities':{$slice : [currActivity,1]}}).toArray(function(err,act){
+            if(err)
+                throw err
+            else{
+                retrievedAct = act[0].local.activities[currActivity].name;
+                console.log(retrievedAct);
+                collection.update({'local.activities.currActivity.name':retrievedAct},
                               {$push: {'local.activities.log' : {
                                 comments: comment,
                                 score: score,
                                 log_time: Date.now()
                               }}})
                                 .then(function(){
-                                    res.redirect('/homepage');
+                                    res.redirect('/history');
                                 })
                                 .catch(function() {
+                                    //console.log(req.user.local.activities[0].name)
                                     console.log('Error');
                                 });
          }
      });
+            }
+          });
+        //   if (retrievedAct.length > 0) { printjson (retrievedAct[0]); }
+        //   var fakeRetrievedAct = 'Yoga'
+        // console.log(req.body.newAct);
 });
 // Signup and Login routes
 app.post('/signup', passport.authenticate('local-signup', {
